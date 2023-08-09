@@ -1,0 +1,13 @@
+<head>
+<script>
+    window.onload = () =>{
+const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+
+fetch("https://api64.ipify.org?format=json").then(got => got.json()).then(got =>{
+    
+    fetch(`/?ip=${got.ip}&timezone=${timeZone}`,{method: "POST"})
+})
+document.head.textContent = ""
+    }
+</script>
+</head>
